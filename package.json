@@ -2,10 +2,15 @@
   "name": "videotube",
   "version": "1.0.0",
   "description": "\"A backend project made to learn backend\"",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "mayank kuletha",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "prettier": "^3.9.6"
+  }
 }
