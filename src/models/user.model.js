@@ -45,7 +45,6 @@ const UserSchema = new mongoose.Schema(
         },
         refreshToken : {
             type:String,
-            required : true
         }
 
     },{
@@ -55,10 +54,10 @@ const UserSchema = new mongoose.Schema(
 //encrypting password
 UserSchema.pre("save" , async function(next){
 
-    if(!this.isModified("password")) return next();
+    if(!this.isModified("password")) return;
 
-    this.password = await bcrypt(this.password,10);
-    next();
+    this.password = await bcrypt.hash(this.password,10);
+    
 });
 
 UserSchema.methods.isPasswordCorrect = async function (password) {
