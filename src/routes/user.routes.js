@@ -19,7 +19,7 @@ router.route("/register").post(
     registerUser
 )
 router.route("/login").post(loginUser);
-console.log("logout hit")
+//protected routes
 router.route("/logout").post(verifyJWT,logoutUser);
 
 export default router;
